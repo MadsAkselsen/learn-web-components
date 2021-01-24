@@ -13,12 +13,17 @@ class Tooltip extends HTMLElement {
         z-index:10;
       }
 
-      :host {
-        background: whitesmoke;
+      :host(.important) {
+        background: #777;
+      }
+
+      :host-context(p) {
+        font-size: 2rem;
+        font-weight: bold;
       }
  
       ::slotted(.highlight) {
-        border-bottom:1px dotted red;
+        border-bottom:3px dotted red;
       }
 
       .icon {
