@@ -6,11 +6,25 @@
     <title>Document</title>
     <script src="tooltip.js"></script>
     <script src="confirm-link.js"></script>
+    <style>
+      div {
+        border: 2px solid orange;
+      }
+
+      ma-tooltip {
+        border: 1px solid blue;
+        padding: 0.15rem;
+      }
+
+      /* .highlight {
+        background-color: yellow;
+      } */
+    </style>
   </head>
   <body>
     <p>
       <ma-tooltip text="Web Components is a set of standarts"
-        >Web Components</ma-tooltip
+        ><span class="highlight">Web Components</span></ma-tooltip
       >
       are awesome!
     </p>
