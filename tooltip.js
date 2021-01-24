@@ -4,6 +4,8 @@ class Tooltip extends HTMLElement {
     this._tooltipContainer;
     this._tooltipText = 'Missing text on text attribute';
     this.attachShadow({ mode: 'open' });
+    const template = document.querySelector('#tooltip-template');
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
   connectedCallback() {
@@ -13,8 +15,7 @@ class Tooltip extends HTMLElement {
     }
 
     // add new html elements and event listeners
-    const tooltipIcon = document.createElement('span');
-    tooltipIcon.textContent = ' (?)';
+    const tooltipIcon = this.shadowRoot.querySelector('span');
     tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this));
     tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this));
     this.style.position = 'relative';
